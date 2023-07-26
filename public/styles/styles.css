@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Установите желаемую высоту для центрирования по вертикали */
+  margin: 0;
+}
+
+.container {
+  padding: 200px;
+  border: 7px solid green;
+  border-radius: 10px;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  list-style-type: none;
+  justify-content: center;
+  align-content: center;
+  padding-left: 0px;
+}
+
+li {
+  background-color: green;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  min-height: 18px;
+}
+
+button {
+  background-color: green;
+}
