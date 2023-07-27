@@ -1,12 +1,21 @@
 body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; */
+}
+
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Установите желаемую высоту для центрирования по вертикали */
+  height: 100vh;
   margin: 0;
 }
 
 .container {
+  display: inline;
   padding: 200px;
   border: 7px solid green;
   border-radius: 10px;
@@ -20,7 +29,7 @@ ul {
   padding-left: 0px;
 }
 
-li {
+.li-list {
   background-color: green;
   border-radius: 5px;
   margin-bottom: 5px;
@@ -28,6 +37,18 @@ li {
   min-height: 18px;
 }
 
-button {
+#add-button {
   background-color: green;
+}
+
+#add-list {
+  position: relative;
+}
+
+.header {
+  margin: 0px;
+}
+
+.today {
+  border: none;
 }

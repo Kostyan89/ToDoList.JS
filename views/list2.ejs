@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </style>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>To Do List</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="today"><i>📅</i>Today</a>
+      <a href="/work" class="work"><i>💼</i>Work</a>
+    </header>
+
+    <div class="main">
+      <div class="container">
+        <h1><%= kindOfDay %></h1>
+        <ul class="col">
+          <% for (var i =0; i< newListItems.length; i++) { %>
+          <li class="li-list"><%= newListItems[i] %></li>
+          <% } %>
+        </ul>
+        <form action="/work" method="post">
+          <input type="text" name="newItem" />
+          <button type="submit" name="button" id="add-button">Add</button>
+        </form>
+      </div>
+    </div>
+    <script src="/app.js" charset="UTF-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </body>
+</html>
