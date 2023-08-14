@@ -1,8 +1,8 @@
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Установите желаемую высоту для центрирования по вертикали */
+  height: 100vh;
   margin: 0;
 }
 
@@ -30,4 +30,66 @@ li {
 
 button {
   background-color: green;
+} */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffd9b7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #c8e4b2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #9ed2be;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #7eaa92;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5f8969;
 }
