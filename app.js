@@ -5,7 +5,8 @@ import { dirname } from "path";
 
 const app = express();
 app.use(express.static("public"));
-var items = ["Buy Food", "Cook Food", "Eat Food"];
+var items = ["Clean", "Sleep", "Eat"];
+var items2 = ["Working"];
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,9 +31,34 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
   var item = req.body.newItem;
 
-  items.push(item);
+  items2.push(item);
 
   res.redirect("/");
+});
+
+app.get("/newList", async (req, res) => {
+  var today = new Date();
+
+  var options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  };
+
+  var day = today.toLocaleDateString("en-US", options);
+
+  res.render("work", {
+    kindOfDay: req.body.listName || day,
+    newListItems: items2,
+  });
+});
+
+app.post("/newList", function (req, res) {
+  var item = req.body.newItem;
+
+  items2.push(item);
+
+  res.redirect("/newList");
 });
 
 app.listen(3000, function () {

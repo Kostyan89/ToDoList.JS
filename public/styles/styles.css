@@ -48,6 +48,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  min-height: 300px;
 }
 
 h1 {
@@ -75,7 +77,7 @@ form {
   align-items: center;
 }
 
-input[type="text"] {
+#inputGoal[type="text"] {
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -92,4 +94,51 @@ button {
 
 button:hover {
   background-color: #5f8969;
+}
+
+#addNewListBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #7eaa92;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#addNewListBtn2 {
+  position: absolute;
+  top: 10px;
+  left: 150px;
+  background-color: #7eaa92;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#nameInput {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:active,
+a:focus {
+  outline: none;
 }
