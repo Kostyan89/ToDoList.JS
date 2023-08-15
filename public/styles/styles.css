@@ -68,9 +68,11 @@ li {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
+  flex: 1;
+  margin-left: 10px;
 }
 
-form {
+form.item {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -141,4 +143,11 @@ a {
 a:active,
 a:focus {
   outline: none;
+}
+
+.box {
+  display: flex;
+}
+
+#checkbox {
 }

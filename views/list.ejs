@@ -10,22 +10,43 @@
 
   <body>
     <button name="mainPage" id="addNewListBtn">
-      <a href="/"><%= kindOfDay %></a>
+      <a href="/"><%= listTitle %></a>
     </button>
-    <button name="mai" id="addNewListBtn2">
-      <a href="/newList">Work</a>
+    <button name="workPage" id="addNewListBtn2">
+      <a href="/work">Private</a>
     </button>
 
     <div class="container">
-      <h1><%= kindOfDay %></h1>
-      <ul class="col">
-        <% for (var i =0; i< newListItems.length; i++) { %>
-        <li><%= newListItems[i] %></li>
-        <% } %>
-      </ul>
-      <form action="/" method="post">
-        <input type="text" name="newItem" id="inputGoal" />
-        <button type="submit" name="button">Add</button>
+      <h1><%= listTitle%></h1>
+
+      <%newListItems.forEach(item => {%>
+
+      <form action="/delete" method="post">
+        <ul class="col">
+          <div class="box">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="<%= item._id %>"
+              onChange="this.form.submit()"
+            />
+            <li><%= item.name %></li>
+          </div>
+          <input type="hidden" name="listName" value="<%= listTitle %>" />
+        </ul>
+      </form>
+
+      <%})%>
+
+      <form class="item" action="/" method="post">
+        <input
+          type="text"
+          name="newItem"
+          id="inputGoal"
+          placeholder="New Item"
+          autocomplete="off"
+        />
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
       </form>
     </div>
   </body>
