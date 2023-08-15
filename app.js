@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import { day } from "./code.js";
 import mongoose from "mongoose";
+import _ from "lodash";
 
 const app = express();
 app.use(express.static("public"));
@@ -81,11 +82,17 @@ app.post("/delete", async (req, res) => {
     await Item.findByIdAndRemove(checkedItemId);
     res.redirect("/");
   } else {
+    const foundList = await List.findOneAndUpdate(
+      { name: listName },
+      { $pull: { items: { _id: checkedItemId } } }
+    );
+    res.redirect("/" + listName);
   }
 });
 
 app.get("/:customListName", async (req, res) => {
-  const customListName = req.params.customListName;
+  const customListName = _.capitalize(req.params.customListName);
+
   const foundList = await List.findOne({ name: customListName }).exec();
   if (!foundList) {
     // Create a new list
