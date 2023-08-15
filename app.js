@@ -9,9 +9,12 @@ import _ from "lodash";
 const app = express();
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://admin-kosta:test1234@cluster0.rjvnryf.mongodb.net/todolistDB",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 const itemsSchema = mongoose.Schema({
   name: String,
